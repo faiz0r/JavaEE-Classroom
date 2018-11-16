@@ -1,0 +1,10 @@
+com\qa\persistence\repository\ClassroomRepository.class
+com\qa\rest\ClassroomEndpoint.class
+com\qa\persistence\repository\ClassroomMapRepository.class
+com\qa\persistance\domain\Classroom.class
+com\qa\business\Service.class
+com\qa\util\JSONUtil.class
+com\qa\business\ClassServiceImpl.class
+com\qa\persistence\repository\ClassroomDBRepository.class
+com\qa\rest\JAXActivator.class
+com\qa\business\ClassService.class
