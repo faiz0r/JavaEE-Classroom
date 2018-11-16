@@ -1,18 +1,15 @@
 package com.qa.persistance.domain;
-
-import java.util.ArrayList;
-
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import org.hibernate.mapping.List;
+
 
 @Entity
 public class Classroom {
@@ -24,16 +21,9 @@ public class Classroom {
 	private String trainer;
 	@Column(length = 100)
 	private String trainees;
-//	@OneToMany(fetch = FetchType.LAZY, mappedBy = "trainees")
-//	private List<trainees> trainee = new ArrayList<>();
-//
-//	@Entity
-//	public class trainees {
-//	    @ManyToOne(fetch = FetchType.LAZY)
-//	    @JoinColumn(name = "classroomid")
-//	    private Classroom classroom;
-//	}
 	
+//	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+//	private List<Trainee> trainee;
 	
 	public Classroom() {
 		

@@ -27,7 +27,7 @@ public class ClassroomDBRepository implements ClassroomRepository{
 	private JSONUtil util;
 
 	public String getAllClass() {
-		TypedQuery<Classroom> query = manager.createQuery("SELECT a FROM Account a", Classroom.class);
+		TypedQuery<Classroom> query = manager.createQuery("SELECT a FROM Classroom a", Classroom.class);
         return util.getJSONForObject(query.getResultList());
 	}
 	
@@ -35,7 +35,7 @@ public class ClassroomDBRepository implements ClassroomRepository{
 	public String createClass(String classroom) {
 		Classroom aClassroom = util.getObjectForJSON(classroom, Classroom.class);
 		manager.persist(aClassroom);
-		return "{\"message\": \"account has been added\"}";
+		return "{\"message\": \"class has been added\"}";
 	}
 
 	@Transactional(REQUIRED)
@@ -49,10 +49,11 @@ public class ClassroomDBRepository implements ClassroomRepository{
 		return "{\"message\": \"class updated\"}";
 	}
 
+	@Transactional(REQUIRED)
 	public String deleteClass(Long id) {
-		Classroom accountInDB = findClass(id);
-		if(accountInDB != null) {
-			manager.remove(accountInDB);
+		Classroom classroom = findClass(id);
+		if(classroom != null) {
+			manager.remove(classroom);
 		}
 		return "{\"message\": \"account deleted\"}";
 	}

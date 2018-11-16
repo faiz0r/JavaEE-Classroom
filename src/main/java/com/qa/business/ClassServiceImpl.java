@@ -31,6 +31,5 @@ public class ClassServiceImpl implements ClassService {
 	public String deleteClass(Long id) {
 		return repo.deleteClass(id);
 	}
-	
 
 }
