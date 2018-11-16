@@ -9,5 +9,4 @@ public interface ClassService {
 	String updateClass(Long id, String classroom);
 
 	String deleteClass(Long id);
-	 
 }
