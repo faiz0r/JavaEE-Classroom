@@ -15,29 +15,9 @@ public class Service {
 	@PersistenceContext(unitName = "primary")
 	private EntityManager em;
 
-	// public List<Account> findAllAccounts() {
-	// TypedQuery<Account> query = em.createQuery("SELECT a FROM Account a ORDER BY
-	// a.accountNum", Account.class);
-	// return query.getResultList();
-	// }
-	//
-	// public List<Account> deleteAccount() {
-	// TypedQuery<Account> query = em.createQuery("DELETE FROM Account a",
-	// Account.class);
-	// return query.getResultList();
-	// }
-
 	public Classroom findUser(Long id) {
 		return em.find(Classroom.class, id);
 	}
-
-	// @Transactional(REQUIRED)
-	// public String createAcccount(String acc) {
-	// JSONUtil util = new JSONUtil();
-	// Account account = util.getObjectForJSON(acc, Account.class);
-	// em.persist(account);
-	// return "{\"message\": \"account sucessfully added\"}";
-	// } 10
 
 	@Transactional(REQUIRED)
 	public Classroom createClass(Classroom classroom) {
